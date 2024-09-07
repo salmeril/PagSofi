@@ -1,0 +1,54 @@
+.audio-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+}
+
+.audio-message button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de los iconos */
+    color: #fff; /* Color del icono */
+    transition: color 0.3s ease; /* Transición para el cambio de color */
+}
+
+.audio-message button:focus {
+    outline: none;
+}
+
+.audio-message button:hover {
+    color: #00f; /* Color del icono al pasar el ratón */
+}
+
+.audio-message img {
+    width: 50px; /* Tamaño del logo */
+    height: 50px;
+}
+
+.progress-bar {
+    flex-grow: 1; /* Hace que la barra de progreso ocupe todo el espacio restante */
+    height: 6px; /* Altura de la barra de progreso */
+    appearance: none; /* Elimina el estilo por defecto */
+    background-color: #ddd; /* Color de fondo de la barra */
+    border-radius: 3px;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background-color: #fff; /* Color del control de progreso */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background-color: #333; /* Color del control de progreso */
+    border-radius: 50%;
+    cursor: pointer;
+}

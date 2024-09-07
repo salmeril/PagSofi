@@ -1,0 +1,322 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/Infografia-1/src/img/fondochat.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+/* Barra del dispositivo (hora, señal, batería) */
+.device-bar {
+    background-color: #000;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    
+}
+
+.device-icons {
+    display: flex;
+    align-items: center;
+}
+
+.device-icons span {
+    
+    margin-left: 10px;
+}
+
+/* Barra superior */
+.top-bar {
+    background-color: #333;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    margin-left: 30vh;
+}
+
+.chat-icon {
+    margin-top: 25px;
+    width: 180px;
+    height: 60px;
+    margin-right: 100vh;
+}
+
+.chat-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+/* Barra lateral izquierda */
+.left-bar {
+    background-color: #111;
+    width: 250px;
+    height: 100%;
+    padding-top: 100px; /* Para evitar la superposición con la barra superior */
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white ;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.left-bar-header {
+    font-size: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.chat-list {
+    padding: 20px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.chat-icon-small {
+    width: 150px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Contenedor principal del chat */
+.chat-container {
+    margin-left: 250px; /* Para evitar la superposición con la barra lateral */
+    padding-top: 100px; /* Para evitar la superposición con la barra superior */
+    width: calc(100% - 350px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.messages {
+    flex-grow: 1;
+    padding: 20px;
+    
+}
+
+.message {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.message.bot {
+    background-color: #555;
+    width: fit-content;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/* Barra inferior fija */
+.footer {
+    bottom: 0;
+    position: fixed;
+    width: 86%;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #444;
+}
+
+.footer input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #555;
+}
+
+.footer button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.footer .emoji, .footer .attach, .footer .microphone {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+audio{
+    margin-top: 2vh;
+}
+
+
+.chat {
+    width: 650px;
+
+    border-radius: 5px;
+    
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.typing-indicator {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    background-color: #262626;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-left: 10vh;
+    align-self: flex-start;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    font-size: 1.3rem;
+
+}
+
+.message:nth-child(odd) {
+    background-color: #262626;
+}
+
+
+
+
+
+/* Estilo del reproductor de audio como burbuja de chat */
+.audio-message {
+    display: flex;
+    align-items: center;
+    background-color: #262626;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 80%;
+}
+
+.audio-message img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.audio-message button {
+    background-color: #262626;
+    color: #262626;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.audio-message button:hover {
+    background-color: #0056b3;
+}
+
+.audio-message #progress-bar {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.audio-message #current-time, .audio-message #duration {
+    font-size: 0.9em;
+}
+
+/* Estilo para la burbuja de escritura */
+.typing-bubble {
+    background-color: #262626; /* Sin fondo para el indicador de escritura */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 100px; /* Ajustar el ancho si es necesario */
+    position: relative;
+    border-radius: 16px;
+    padding-top: 20px;
+    margin-left: 10vh;
+}
+
+/* Estilo para el indicador de escritura */
+.typing-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para cada punto en el indicador de escritura */
+.dot {
+    
+    background-color: #fff; /* Color de los puntos */
+    border-radius: 50%;
+    width: 12px; /* Tamaño de los puntos */
+    height: 12px;
+    margin: 0 4px; /* Espacio entre los puntos */
+    animation: dot-blink 1.4s infinite both;
+}
+
+/* Animación para los puntos */
+@keyframes dot-blink {
+    0%, 20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

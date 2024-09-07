@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Participantes</title>
+    <link rel="stylesheet" href="/Infografia-1/css/chat.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/Infografia-1/src/icons/logo.png" alt="Logo" />
+            </div>
+            <div class="participants-list">
+                <h2>Chats</h2>
+                <h3>Hoy</h3>
+                
+                <ul>
+                    <li class="participant">
+                        <img src="/Infografia-1/src/icons/logo.png" alt="Character IA" class="logocaracter">
+                        
+                    </li>
+                    <!-- Añade más participantes aquí -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Contenedor principal -->
+        <div class="content">
+            <!-- Barra superior -->
+            <header class="header">
+                
+                <div class="header-content">
+                    <img src="/Infografia-1/src/icons/logo.png" alt="Character IA" class="chat-icon">
+                    
+                </div>
+                <div class="time">20:30</div>
+            </header>
+
+            <!-- Área de chat -->
+            <div class="chat-area">
+                <div class="chat-container">
+                    <!-- Burbuja de chat -->
+                    <div id="chat-bubble" class="chat-bubble position-left">
+                        Los personajes son diseñados para imitar comportamientos reales y mejoran con el tiempo gracias a la interacción con los usuarios. 😊
+                    </div>
+
+                    <!-- Contenedor para opciones -->
+                    <div id="chat-options" class="chat-bubble-large position-center">
+                        <p>Dispositivos en los que más se utiliza</p>
+                        <label><input type="radio" name="device"> Móvil</label>
+                        <label><input type="radio" name="device"> Otros</label>
+                    </div>
+                </div>
+            </div>
+            <div id="chat-bubble" class="chat-bubble position-left">
+                <!-- El contenido inicial se mostrará después de la animación -->
+            </div>
+            
+            <div id="chat-options" class="chat-bubble-large position-center" style="display:none;">
+                <p>Dispositivos en los que más se utiliza</p>
+                <label><input type="radio" name="device"> Móvil</label>
+                <label><input type="radio" name="device"> Otros</label>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="/Infografia-1/js/chat.js"></script>
+</body>
+</html>

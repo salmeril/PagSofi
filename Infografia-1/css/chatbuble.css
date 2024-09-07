@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+  
+body {
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  
+  .chat-bubble {
+    position: absolute;
+    background-color: #1E1E1F;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 20px;
+    max-width: 250px;
+    display: inline-block;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out; /* Transición para agrandar la burbuja */
+  }
+  
+  #bubble {
+    top: 30vh;
+    left: 95vh;
+    transform: translate(-50%, -50%);
+  }
+  
+  #button-bubble {
+    display: none;
+    top: calc(40vh + 110px); /* Posición inicial por debajo de la primera burbuja */
+    left: 50%;
+    transform: translate(-80%, -50%);
+  }
+  
+  .chat-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #1E1E1F;
+    border-bottom: 0;
+    margin-left: -10px;
+    margin-bottom: -10px;
+  }
+  
+  .typing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40px;
+
+  }
+  
+  .typing span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: blink 1.4s infinite both;
+  }
+  
+  .typing span:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing span:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  
+  .typing span:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .message {
+    display: none; /* Oculta el mensaje al inicio */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
+    line-height: 2.5rem;
+  }
+  
+  #continue-btn {
+    padding: 5px 10px;
+    background-color: #1E1E1F;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+  }
+  
+  #continue-btn:hover {
+    background-color: #00fff0;
+  }

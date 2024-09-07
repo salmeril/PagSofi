@@ -1,0 +1,247 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-image: url('/Infografia-1/src/img/fondochat.png');
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+   
+    
+}
+
+/* Contenedor principal */
+.main-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 20%;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo img {
+    display: none;
+    max-width: 10vh;
+    margin-bottom: 20px;
+}
+
+
+
+.participants-list {
+    width: 100%;
+    margin-left: 5vh;
+    margin-top: 5vh;
+}
+
+.participants-list h3 {
+    margin-top: 5vh;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.participants-list h2 {
+    margin-bottom: 15px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+.participant {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.participant img {
+
+    width: 50%;
+
+}
+
+.participant span {
+    color: white;
+}
+
+/* Contenedor de contenido */
+.content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra superior */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .time {
+    font-size: 14px;
+}
+
+.header .header-content {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.chat-title {
+    font-size: 18px;
+}
+
+.chat-icon{
+    width: 20vh;
+    margin-left: 10vh;
+}
+
+/* Área de chat */
+.chat-area {
+    flex: 1;
+    
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Burbujas de chat */
+.chat-bubble, .chat-bubble-large {
+    background-color: #3e3e3e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 300px;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Flecha de la burbuja */
+.chat-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #3e3e3e;
+}
+
+/* Burbujas de chat más grandes */
+.chat-bubble-large {
+    background-color: #252525;
+    padding: 20px 25px;
+    border-radius: 25px;
+    max-width: 350px;
+}
+
+/* Flecha de la burbuja grande */
+.chat-bubble-large:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #252525;
+}
+
+/* Botón en la burbuja */
+.chat-button {
+    background-color: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.chat-button:hover {
+    background-color: #0077cc;
+}
+
+/* Posicionamiento flexible */
+.chat-bubble.position-left {
+    align-self: flex-start;
+}
+
+.chat-bubble.position-right {
+    align-self: flex-end;
+}
+
+.chat-bubble.position-center {
+    align-self: center;
+}
+
+
+
+
+/* Animación para los puntos suspensivos */
+.dots::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+    animation: ellipsis steps(4, end) 900ms infinite;
+}
+
+@keyframes ellipsis {
+    0% {
+        content: '';
+    }
+    25% {
+        content: '.';
+    }
+    50% {
+        content: '..';
+    }
+    75% {
+        content: '...';
+    }
+    100% {
+        content: '';
+    }
+}
+
+/* Estilo para las burbujas de chat, puedes modificar según sea necesario */
+.chat-bubble {
+    /* Tus estilos existentes aquí */
+}
+
+.chat-bubble-large {
+    /* Tus estilos existentes aquí */
+}

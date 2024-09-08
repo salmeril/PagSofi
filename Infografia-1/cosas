@@ -1,7 +1,7 @@
-
 const messagesContainer = document.getElementById('messages');
 let messageIndex = 0;
 
+// Muestra la burbuja de tipeo
 function showTypingBubble() {
     const typingBubble = document.createElement('div');
     typingBubble.className = 'typing-bubble';
@@ -21,22 +21,28 @@ function showTypingBubble() {
     return typingBubble; // Retorna la burbuja para poder eliminarla después
 }
 
+// Añade un mensaje al contenedor
 function addMessage(content, isAudio = false, audioSrc = null, audioId = null) {
     const message = document.createElement('div');
     message.className = 'message';
     if (isAudio) {
         const audioContainer = createAudioPlayer(audioSrc, audioId);
         message.appendChild(audioContainer);
+    } else if (typeof content === 'object' && content.isSelector) {
+        const selectorContainer = createPercentageSelectors(content.options, content.title);
+        message.appendChild(selectorContainer);
     } else {
         message.innerHTML = content;
     }
     messagesContainer.appendChild(message);
 }
 
+// Limpia el chat
 function clearChat() {
     messagesContainer.innerHTML = ''; // Elimina todos los mensajes anteriores
 }
 
+// Muestra los mensajes con un retardo
 function showMessages(messages, nextFunction, delayAfterLastMessage = 57000) {
     clearChat(); // Borra los mensajes anteriores antes de mostrar los nuevos
     messageIndex = 0;
@@ -66,11 +72,83 @@ function showMessages(messages, nextFunction, delayAfterLastMessage = 57000) {
     showNextMessage();
 }
 
+// Crea los selectores con las barras de porcentaje
+function createPercentageSelectors(options, title) {
+    const selectorContainer = document.createElement('div');
+    selectorContainer.className = 'selector-container';
+
+    // Agrega el título si se proporciona
+    if (title) {
+        const titleElement = document.createElement('div');
+        titleElement.className = 'selector-title';
+        titleElement.textContent = title;
+        selectorContainer.appendChild(titleElement);
+    }
+
+    options.forEach((option) => {
+        const optionContainer = document.createElement('div');
+        optionContainer.className = 'option-container';
+
+        const radioButton = document.createElement('input');
+        radioButton.type = 'radio'; // Cambiado a 'radio' para permitir solo una selección
+        radioButton.name = 'percentageSelector'; // Asegura que solo un radio button pueda estar activo a la vez
+        radioButton.id = option.label + 'Check';
+        radioButton.addEventListener('change', () => updatePercentageBar(option.label, option.percentage));
+
+        const label = document.createElement('label');
+        label.htmlFor = radioButton.id;
+        label.textContent = option.label;
+
+        const progressBar = document.createElement('div');
+        progressBar.className = 'progress-bar-container';
+        
+        const percentageBar = document.createElement('div');
+        percentageBar.className = 'percentage-bar ' + option.label.toLowerCase();
+        percentageBar.id = option.label + 'Bar';
+
+        const percentageValue = document.createElement('div');
+        percentageValue.className = 'percentage-value';
+        percentageValue.id = option.label + 'Percentage';
+
+        progressBar.appendChild(percentageBar);
+        progressBar.appendChild(percentageValue);
+
+        optionContainer.appendChild(radioButton);
+        optionContainer.appendChild(label);
+        optionContainer.appendChild(progressBar);
+        selectorContainer.appendChild(optionContainer);
+    });
+
+    return selectorContainer;
+}
+
+// Actualiza las barras de porcentaje
+function updatePercentageBar(label, percentage) {
+    document.querySelectorAll('.percentage-bar').forEach(bar => bar.style.width = '0%');
+    document.querySelectorAll('.percentage-value').forEach(value => value.textContent = '0%');
+
+    const percentageBar = document.getElementById(label + 'Bar');
+    const percentageValue = document.getElementById(label + 'Percentage');
+
+    if (percentageBar) {
+        percentageBar.style.width = percentage + '%';
+        percentageValue.textContent = percentage + '%';
+    }
+}
+
 // Definir los flujos de mensajes
 const firstMessages = [
     "¡Hola!, ¿cómo andas? Soy Character IA y en el siguiente audio te cuento un poco sobre mí 😊",
     { audio: '/infografia-1/src/audio/CaracterAiTodoJunto.mp3', id: 1 },
-    "Los personajes son diseñados para imitar comportamientos reales y mejoran con el tiempo gracias a la interacción con los usuarios."
+    
+    { 
+      title: "Dispositivos en los que más se utiliza", // Agrega el título aquí
+      isSelector: true, 
+      options: [
+          { label: 'Móvil', percentage: 72.66 },
+          { label: 'Otros', percentage: 27.44 }
+      ]
+    }
 ];
 
 const secondMessages = [
@@ -87,3 +165,9 @@ const thirdMessages = [
 
 // Iniciar el primer flujo de mensajes y encadenar los siguientes
 showMessages(firstMessages, () => showMessages(secondMessages, () => showMessages(thirdMessages, null, 0), 10000), 10000);
+
+
+
+
+
+showMessages(firstMessages, () => showMessages(secondMessages, () => showMessages(thirdMessages, null, 0), 15000), 15000);

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 body {
@@ -11,10 +10,9 @@ body {
     height: 100vh;
 }
 
-
 /* Barra del dispositivo (hora, señal, batería) */
 .device-bar {
-    background-color: #000;
+    background-color: #171717;
     height: 30px;
     display: flex;
     justify-content: space-between;
@@ -26,7 +24,6 @@ body {
     top: 0;
     width: 100%;
     z-index: 10;
-    
 }
 
 .device-icons {
@@ -35,7 +32,6 @@ body {
 }
 
 .device-icons span {
-    
     margin-left: 10px;
 }
 
@@ -69,18 +65,16 @@ body {
     font-weight: bold;
 }
 
-
-
 /* Barra lateral izquierda */
 .left-bar {
-    background-color: #111;
+    background-color: #171717;
     width: 250px;
     height: 100%;
     padding-top: 100px; /* Para evitar la superposición con la barra superior */
     position: fixed;
     top: 0;
     left: 0;
-    color: white ;
+    color: white;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -89,7 +83,7 @@ body {
 .left-bar-header {
     font-size: 20px;
     padding: 20px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #171717;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -105,8 +99,11 @@ body {
 .chat-item {
     display: flex;
     align-items: center;
-    padding: 10px 0;
+    padding: 5px 2px;
     cursor: pointer;
+    background-color: #262626;
+    border-radius: 18px;
+    margin-top: 2vh;
 }
 
 .chat-icon-small {
@@ -127,15 +124,31 @@ body {
 }
 
 .messages {
+    margin-top: 10vh;
     flex-grow: 1;
     padding: 20px;
-    
+    display: flex;
+    flex-direction: column;
 }
 
+/* Estilos de los mensajes */
 .message {
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 10px;
+    background-color: #262626;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-left: 10vh;
+    align-self: flex-start;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    font-size: 1.3rem;
+    max-width: 500px;
+}
+
+.message:nth-child(odd) {
+    background-color: #262626;
 }
 
 .message.bot {
@@ -145,8 +158,6 @@ body {
     font-weight: 400;
     font-style: normal;
 }
-
-
 
 /* Barra inferior fija */
 .footer {
@@ -183,59 +194,6 @@ body {
     margin-right: 10px;
 }
 
-
-
-
-
-
-audio{
-    margin-top: 2vh;
-}
-
-
-.chat {
-    width: 650px;
-
-    border-radius: 5px;
-    
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.typing-indicator {
-    font-style: italic;
-    color: #888;
-    margin-bottom: 10px;
-}
-
-.messages {
-    display: flex;
-    flex-direction: column;
-}
-
-.message {
-    background-color: #262626;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 10px;
-    margin-left: 10vh;
-    align-self: flex-start;
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    color: white;
-    font-size: 1.3rem;
-
-}
-
-.message:nth-child(odd) {
-    background-color: #262626;
-}
-
-
-
-
-
 /* Estilo del reproductor de audio como burbuja de chat */
 .audio-message {
     display: flex;
@@ -243,7 +201,7 @@ audio{
     background-color: #262626;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 80%;
 }
 
@@ -277,13 +235,13 @@ audio{
 
 /* Estilo para la burbuja de escritura */
 .typing-bubble {
-    background-color: #262626; /* Sin fondo para el indicador de escritura */
+    background-color: #262626;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    max-width: 100px; /* Ajustar el ancho si es necesario */
+    max-width: 100px;
     position: relative;
     border-radius: 16px;
     padding-top: 20px;
@@ -297,18 +255,15 @@ audio{
     align-items: center;
 }
 
-/* Estilo para cada punto en el indicador de escritura */
 .dot {
-    
-    background-color: #fff; /* Color de los puntos */
+    background-color: #fff;
     border-radius: 50%;
-    width: 12px; /* Tamaño de los puntos */
+    width: 12px;
     height: 12px;
-    margin: 0 4px; /* Espacio entre los puntos */
+    margin: 0 4px;
     animation: dot-blink 1.4s infinite both;
 }
 
-/* Animación para los puntos */
 @keyframes dot-blink {
     0%, 20% {
         opacity: 0;
@@ -320,3 +275,153 @@ audio{
         opacity: 0;
     }
 }
+       /* Estilos adicionales */
+       .selector-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .option-container {
+        display: block;
+        align-items: center;
+        gap: 30px;
+    }
+
+/* Contenedor de las barras de progreso */
+.progress-bar-container {
+    position: relative;
+    width: 350px;
+    height: 20px;
+    background-color: #e0e0e0; /* Color de fondo de la barra */
+    margin-top: 5px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    border-radius: 16px;
+}
+
+/* Barras de progreso */
+.percentage-bar {
+    height: 100%;
+    background-color: #ffffff; /* Color blanco por defecto */
+    border-radius: 16px;
+
+    transition: width 0.5s ease-in-out; /* Transición suave para el cambio de ancho */
+}
+
+/* Barras de progreso para opciones específicas, cuando se selecciona */
+.móvil:checked ~ .progress-bar-container .percentage-bar {
+    background-color: #00FFF0; /* Verde para la opción "Móvil" */
+    border-radius: 16px;
+
+}
+
+.otros:checked ~ .progress-bar-container .percentage-bar {
+    background-color: #9747FF; /* Rojo para la opción "Otros" */
+    border-radius: 16px;
+
+}
+
+/* Valor del porcentaje */
+.percentage-value {
+    position: absolute;
+    right: 10px;
+    top: 5vh;
+    transform: translateY(-8vh);
+    font-size: 20px;
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Título de los selectores */
+.selector-title {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px; /* Ajusta según sea necesario */
+    margin-bottom: 5px;
+}
+
+.selector-subtitle {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px; /* Ajusta según sea necesario */
+    margin-bottom: 10px;
+    color: #666; /* Ajusta el color según sea necesario */
+}
+
+
+
+    .circle-selector {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 2px solid #333; /* Añade un borde para hacerlos más visibles */
+        transition: background-color 0.3s ease; /* Transición suave al cambiar de estado */
+    }
+
+    .circle-selector:hover {
+        background-color: #aaa; /* Color de fondo al pasar el cursor */
+    }
+
+    h3{
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 28px;
+    }
+
+
+    .sticker {
+        width: 200px; /* Ajusta el tamaño según sea necesario */
+        height: auto;
+        display: block;
+        margin: 10px 0;
+        background: transparent;
+    }
+
+    
+    .sticker-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Espacio entre las imágenes, ajusta si es necesario */
+        justify-content: center;
+    }
+    
+    .sticker-container .sticker {
+        width: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+        height: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+        object-fit: cover;
+        background: transparent; /* Asegura que el fondo de las imágenes sea transparente */
+    }
+
+
+    .message-image {
+        background-color: transparent;
+    }
+
+    
+
+    
+    
+  
+  label{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+  }
+
+
+
+  

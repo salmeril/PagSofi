@@ -1,10 +1,42 @@
 body {
-    margin: 0;
+    margin: auto;
     padding: 0;
     background-image: url('/Infografia-1/src/img/background.png');
     background-size: cover; /* Hace que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
+    max-width: 1440px;
+    max-height: 100vh;
+    align-items: center;
+    justify-content: center;
    
     background-attachment: fixed; /* Hace que el fondo no se desplace al hacer scroll */
   }
+
+
+
+
+  .device-bar {
+    background-color: #171717;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.device-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 10vh;
+}
+
+.device-icons span {
+    margin-right: 2vh;
+}

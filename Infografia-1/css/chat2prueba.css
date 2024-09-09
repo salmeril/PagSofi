@@ -3,6 +3,7 @@
 body {
     margin: 0;
     padding: 0;
+    max-width: 1440px;
     background-image: url('/Infografia-1/src/img/fondochat.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -29,10 +30,11 @@ body {
 .device-icons {
     display: flex;
     align-items: center;
+    margin-right: 10vh;
 }
 
 .device-icons span {
-    margin-left: 10px;
+    margin-right: 2vh;
 }
 
 /* Barra superior */
@@ -42,9 +44,10 @@ body {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    width: 100%;
+    width: 95%;
     position: fixed;
     top: 0;
+    margin-left: 10vh;
 }
 
 .chat-header {
@@ -68,7 +71,7 @@ body {
 /* Barra lateral izquierda */
 .left-bar {
     background-color: #171717;
-    width: 250px;
+    width: 300px;
     height: 100%;
     padding-top: 100px; /* Para evitar la superposición con la barra superior */
     position: fixed;
@@ -104,12 +107,14 @@ body {
     background-color: #262626;
     border-radius: 18px;
     margin-top: 2vh;
+    
 }
 
 .chat-icon-small {
     width: 150px;
     height: 50px;
     margin-right: 10px;
+    margin-left: 1vh;
 }
 
 /* Contenedor principal del chat */
@@ -137,14 +142,14 @@ body {
     border-radius: 16px;
     padding: 20px;
     margin-bottom: 10px;
-    margin-left: 10vh;
+    margin-left: 15vh;
     align-self: flex-start;
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: normal;
     color: white;
-    font-size: 1.3rem;
-    max-width: 500px;
+    font-size: 1.5rem;
+    max-width: 600px;
 }
 
 .message:nth-child(odd) {
@@ -163,12 +168,13 @@ body {
 .footer {
     bottom: 0;
     position: fixed;
-    width: 86%;
+    width: 176vh;
     background-color: #333;
     padding: 10px;
     display: flex;
     align-items: center;
     border-top: 1px solid #444;
+    margin-left: 5.5vh;
 }
 
 .footer input {
@@ -221,7 +227,7 @@ body {
 }
 
 .audio-message button:hover {
-    background-color: #0056b3;
+    background-color: #9747FF;
 }
 
 .audio-message #progress-bar {
@@ -275,28 +281,35 @@ body {
         opacity: 0;
     }
 }
-       /* Estilos adicionales */
-       .selector-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+.selector-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #262626; /* Fondo oscuro similar a los mensajes */
+    border-radius: 16px; /* Borde redondeado como los mensajes */
+    padding: 20px;
+    margin-bottom: 10px;
+    color: white;
+    margin-left: 0;
+}
+
 
     .option-container {
         display: block;
         align-items: center;
         gap: 30px;
+        align-items: center;
+        justify-content: center;
     }
 
 /* Contenedor de las barras de progreso */
 .progress-bar-container {
     position: relative;
-    width: 350px;
+    width: 380px;
     height: 20px;
     background-color: #e0e0e0; /* Color de fondo de la barra */
     margin-top: 5px;
     font-weight: 700;
-    font-style: normal;
     font-size: 30px;
     border-radius: 16px;
 }
@@ -306,7 +319,6 @@ body {
     height: 100%;
     background-color: #ffffff; /* Color blanco por defecto */
     border-radius: 16px;
-
     transition: width 0.5s ease-in-out; /* Transición suave para el cambio de ancho */
 }
 
@@ -322,37 +334,37 @@ body {
     border-radius: 16px;
 
 }
-
 /* Valor del porcentaje */
 .percentage-value {
     position: absolute;
     right: 10px;
-    top: 5vh;
-    transform: translateY(-8vh);
+    top: -3vh;
+    
     font-size: 20px;
     color: #ffffff;
     font-family: "Lato", sans-serif;
     font-weight: 700;
-    font-style: normal;
 }
 
-/* Título de los selectores */
+.selector-container {
+    background-color: #262626;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
 .selector-title {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 20px; /* Ajusta según sea necesario */
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
 .selector-subtitle {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px; /* Ajusta según sea necesario */
     margin-bottom: 10px;
-    color: #666; /* Ajusta el color según sea necesario */
+    font-size: 14px;
+    color: #ccc;
 }
+
 
 
 
@@ -382,28 +394,37 @@ body {
     }
 
 
-    .sticker {
-        width: 200px; /* Ajusta el tamaño según sea necesario */
-        height: auto;
-        display: block;
-        margin: 10px 0;
-        background: transparent;
-    }
 
-    
-    .sticker-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px; /* Espacio entre las imágenes, ajusta si es necesario */
-        justify-content: center;
-    }
-    
-    .sticker-container .sticker {
-        width: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
-        height: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
-        object-fit: cover;
-        background: transparent; /* Asegura que el fondo de las imágenes sea transparente */
-    }
+.message{
+    background-color: none;
+}
+
+/* Contenedor de stickers sin burbuja */
+.sticker-container {
+    display: grid;
+    grid-template-columns: repeat(2, 200px); /* 2 columnas para stickers */
+    row-gap: 2vh;
+    column-gap: 10vh;
+    margin-bottom: 15px;
+    margin-left: 10vh;
+    background-color: transparent; /* Asegura que no haya fondo */
+    border: none;
+    padding: 0;
+}
+
+/* Estilo para cada sticker */
+.sticker {
+    width: 250px; /* Tamaño ajustado para que quepan 2 stickers por fila */
+    height: auto;
+    background-color: transparent; /* Sin fondo para stickers */
+}
+
+/* Asegura que los stickers no tengan la burbuja de los mensajes */
+.sticker-container .message {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
 
 
     .message-image {
@@ -424,4 +445,42 @@ body {
 
 
 
-  
+  .action-link {
+    
+    color: #00FFF0;
+    
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 5px 0;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.action-link:hover {
+    background-color: #4E07A9;
+}
+
+/* Mensajes normales (bot o sistema) */
+
+/* Mensaje del usuario */
+/* Mensaje del usuario */
+/* Mensaje del usuario */
+/* Mensaje del usuario */
+.user-message {
+    background-color: #4E07A9; /* Color de fondo para mensajes del usuario */
+    color: #fff; /* Color del texto */
+    margin-left: auto; /* Alinea el mensaje del usuario hacia la derecha */
+    text-align: right; /* Alinea el texto dentro del mensaje a la derecha */
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    border-radius: 16px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    max-width: 300px; /* Limitar el ancho del mensaje */
+    margin-bottom: 10px; /* Espacio entre mensajes */
+}

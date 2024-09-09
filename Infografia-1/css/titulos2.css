@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.titulo1div{
+    margin-top: 0;
+}
+
+
+.titulopricipal{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.25em;
+    word-spacing: 0.25em;
+    font-style: normal;
+    text-align: center;
+    margin-top: 10vh;
+}

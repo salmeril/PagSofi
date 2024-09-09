@@ -171,3 +171,36 @@ showMessages(firstMessages, () => showMessages(secondMessages, () => showMessage
 
 
 showMessages(firstMessages, () => showMessages(secondMessages, () => showMessages(thirdMessages, null, 0), 15000), 15000);
+
+
+
+
+
+
+// Definir los flujos de mensajes
+const firstMessages = [
+    { audio: '/infografia-1/src/audio/pros1chayanne.mp3', id: 1 },
+    "Sigue escuchando! ",
+    "Te diré todo lo bueno de usar character ai",
+    { audio: '/infografia-1/src/audio/pros2chayanne.mp3', id: 2 },
+    { audio: '/infografia-1/src/audio/pros3chayanne.mp3', id: 3 }, // Este es el último audio
+];
+
+const secondMessages = [
+    "Aunque no todo es bueno, también hay partes poco éticas en este chat",
+    { audio: '/infografia-1/src/audio/CaracterAi3.mp3', id: 4 }, // Este es el último audio
+];
+
+const thirdMessages = [
+    ["<strong>🌍 La huella de carbono:</strong> generada por el entrenamiento de AI es igual a:", "🚗 Conducir millones de kilómetros en un auto", "🏠 Alimentar cientos de hogares durante un año."],
+    "Bueno, mi gente linda, me despido por ahora! ¡Les mando un abrazo ",
+    "¡Bueno, mi gente linda, me despido por ahora! ¡Les mando un abrazo! !",
+];
+
+const fourthMessages = [
+    "Espero tengas ganas de continuar",
+    { showContinueButton: true } // Botón de continuar
+];
+
+// Iniciar el primer flujo de mensajes y encadenar los siguientes
+showMessages(firstMessages, () => showMessages(secondMessages, () => showMessages(thirdMessages, () => showMessages(fourthMessages), 5000), 5000), 5000);

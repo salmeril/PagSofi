@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/Infografia-1/css/messichat3.css">
+    
+    <link rel="stylesheet" href="/Infografia-1/css/reproductor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap" rel="stylesheet">
+    <title>Chat Con Participantes</title>
+</head>
+<body>
+
+    <!-- Notificación (prueba para verificar que funcione correctamente) -->
+    <div class="notification">
+        <img src="/path/to/avatar.png" alt="Avatar" width="50" height="50" style="border-radius:50%;">
+        <div class="notification-text">
+            <div class="notification-title">Chayanne</div>
+            <div class="notification-subtitle">PRO Y CONTRAS DE CHARACTER IA</div>
+        </div>
+    </div>
+
+    <div class="device-bar">
+        <span class="time">20:30</span>
+        <div class="device-icons">
+            <span class="signal"><img src="/Infografia-1/src/icons/senial.png" alt=""></span>
+            <span class="wifi"><img src="/Infografia-1/src/icons/wifi.png" alt=""></span>
+            <span class="battery"><img src="/Infografia-1/src/icons/bateria.png" alt=""></span>
+        </div>
+    </div>
+
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <div class="chat-header">
+            <a href=""><img src="/Infografia-1/src/icons/lionelchat.png" alt="Icono del chat" class="chat-icon"></a>
+        </div>
+    </div>
+
+    <!-- Barra lateral izquierda -->
+    <div class="left-bar">
+        <div class="left-bar-header">
+            <span>Chats</span>
+        </div>
+        <div class="chat-list">
+            <span>Hoy</span>
+            <div class="chat-item">
+                <a href="/Infografia-1/page/chat2prueba.html"><img src="/Infografia-1/src/icons/lionelchat.png" alt="Icono del chat" class="chat-icon-small"></a>
+            </div>
+            <div class="chat-item">
+                <a href="/Infografia-1/index.html"><img src="/Infografia-1/src/icons/logo.png" alt="Icono del chat" class="chat-icon-small"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="chat-container">
+        <!-- Mensajes del chat -->
+        <div class="chat">
+            <div id="typing-indicator" class="typing-indicator"></div>
+            <div id="messages" class="messages">
+                <!-- Aquí se incluirán los selectores dentro de las burbujas de chat -->
+            </div>
+        </div>
+
+        <!-- Barra inferior (input del chat) -->
+        <div class="footer">
+            <button class="emoji "><img class="iconosbot" src="/Infografia-1/src/icons/caritaicon.png" alt=""></button>
+            <button class="attach"><img class="iconosbotmas" src="/Infografia-1/src/icons/mas.png" alt=""></button>
+            <input type="text" placeholder="Escribe un mensaje...">
+            
+            <button class="microphone"><img class="iconosbot" src="/Infografia-1/src/icons/microfonoicon.png" alt=""></button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/Infografia-1/js/appMessi.js"></script>
+    <script src="/Infografia-1/js/ChatAppMessi3.js"></script>
+    <script src="/Infografia-1/js/reproductorMessi.js"></script>
+    <script src="/Infografia-1/js/Messages1.js"></script>
+    <script src="/Infografia-1/js/Messages2.js"></script>
+
+    <!-- Llamada a la función de notificación -->
+    <script>
+        // Llama a la función de notificación cuando sea necesario
+        
+    </script>
+</body>
+</html>

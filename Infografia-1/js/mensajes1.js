@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
     bubble.style.top = '40%'; // Nueva posición en la página
     bubble.style.left = '50%';
     bubble.style.transform = 'translate(-15vh, 2vh)';
-  }, 5000); // Cambiar después de 3 segundos (3000 ms)
+  }, 2000); // Cambiar después de 3 segundos (3000 ms)
 
   setTimeout(function () {
     const buttonBubble = document.getElementById('button-bubble');
 
     // Mostrar la burbuja del botón en una posición debajo de la primera burbuja
     buttonBubble.style.display = 'block';
-  }, 10000); // Mostrar el botón después de 5 segundos (5000 ms)
+  }, 2000); // Mostrar el botón después de 5 segundos (5000 ms)
 });
